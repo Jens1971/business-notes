@@ -4,7 +4,7 @@ import { io } from "https://cdn.socket.io/4.7.5/socket.io.esm.min.js";
  * ✅ Set this to your Render service URL
  * Example: https://business-notes-server.onrender.com
  */
-const RELAY_URL = "https://DEIN-RENDER-SERVICE.onrender.com";
+const RELAY_URL = "https://business-notes-relay-server.onrender.com";
 
 function getDeviceId(){
   let id = localStorage.getItem("deviceId");
