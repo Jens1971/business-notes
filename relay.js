@@ -25,6 +25,11 @@ export const socket = io(RELAY_URL, {
   auth: { deviceId: getDeviceId() }
 });
 
+socket.on("connect", () => console.log("✅ RELAY connected", socket.id));
+socket.on("disconnect", (r) => console.log("⚠️ RELAY disconnected", r));
+socket.on("connect_error", (e) => console.log("❌ RELAY connect_error", e?.message, e));
+
+
 socket.on("connect", () => onStatus(true));
 socket.on("disconnect", () => onStatus(false));
 socket.on("connect_error", (err) => onStatus(false, err?.message || "connect_error"));
